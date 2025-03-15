@@ -8,10 +8,10 @@ const ProductCard = ({ product }) => {
       <img src={product.image} alt={product.name} />
       <h3>{product.name}</h3>
       <p className="price">
-        <span>جنية</span> {product.price}
+        <span>EGP</span> {product.price}
       </p>
       <Link to="/customize">
-        <button>تخصيص المنتج</button>
+        <button>Customize Product</button>
       </Link>
     </div>
   );

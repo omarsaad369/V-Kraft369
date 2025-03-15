@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "name": "Modern T-Shirt",
+    "image": "src/assets/images/template1.png"
+  },
+  {
+    "id": 2,
+    "name": "Classic Hoodie",
+    "image": "src/assets/images/template2.png"
+  }
+]

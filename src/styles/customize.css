@@ -1,118 +1,150 @@
 /* 🌟 Main Container */
 .customize-container {
-  text-align: center; /* محاذاة المحتوى للمنتصف */
-  padding: 30px; /* إضافة مسافة حول المحتوى */
-  font-family: "Arial", sans-serif; /* تعيين الخط الأساسي */
+  text-align: center;
+  padding: 30px;
+  font-family: "Arial", sans-serif;
 }
 
 /* 🛠️ Customization Options */
 .customization-options {
-  display: flex; /* استخدام Flexbox لتنظيم العناصر */
-  flex-wrap: wrap; /* السماح للعناصر بالانتقال إلى سطر جديد عند الحاجة */
-  justify-content: center; /* توسيط العناصر أفقيًا */
-  align-items: center; /* محاذاة العناصر عموديًا */
-  gap: 15px; /* المسافة بين العناصر */
-  background: #f8f8f8; /* لون خلفية فاتح */
-  padding: 15px; /* إضافة مسافة داخلية */
-  border-radius: 10px; /* جعل الحواف مستديرة */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف لرفع الشكل */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  background: #f8f8f8;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* 📌 Inputs & Select Fields */
-input[type="color"],
+/* 🔠 Inputs & Select Fields */
 input[type="text"],
-input[type="file"],
-select {
-  padding: 8px; /* إضافة مسافة داخلية */
-  font-size: 16px; /* تعيين حجم النص */
-  border-radius: 5px; /* جعل الحواف مستديرة */
-  border: 1px solid #ccc; /* تعيين حد رمادي */
-  width: 180px; /* تحديد عرض المدخلات */
-  text-align: center; /* محاذاة النصوص للمنتصف */
-}
-
-/* 🔠 Dropdown Styling */
-select {
-  cursor: pointer; /* تغيير المؤشر عند التفاعل */
-  background: white; /* تعيين خلفية بيضاء */
-}
-
-/* 🎛️ Text Move Buttons */
-.move-buttons {
-  display: flex; /* استخدام Flexbox لتنظيم الأزرار */
-  justify-content: center; /* توسيط الأزرار */
-  gap: 5px; /* المسافة بين الأزرار */
-  margin-top: 10px; /* إضافة مسافة من الأعلى */
-}
-
-.move-buttons button {
-  background: #007bff; /* لون أزرق للأزرار */
-  color: white; /* لون النص داخل الأزرار */
-  border: none; /* إزالة الحدود */
-  padding: 8px 10px; /* إضافة مسافة داخلية */
-  font-size: 18px; /* تكبير حجم النص */
-  cursor: pointer; /* تغيير المؤشر */
-  border-radius: 5px; /* جعل الحواف مستديرة */
-  transition: 0.3s; /* إضافة تأثير عند التحويل */
-}
-
-/* تأثير التمرير (Hover) */
-.move-buttons button:hover {
-  background: #0056b3; /* تغيير اللون عند تمرير الماوس */
+input[type="file"] {
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 180px;
+  text-align: center;
 }
 
 /* 👀 Preview Section */
 .preview {
-  margin-top: 20px; /* إضافة مسافة بين المعاينة وباقي الصفحة */
-  display: flex; /* استخدام Flexbox لترتيب العناصر */
-  flex-direction: column; /* جعل العناصر رأسية */
-  align-items: center; /* توسيط العناصر أفقيًا */
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* 🎨 Product Preview */
 .product-preview {
-  width: 300px; /* تحديد عرض المعاينة */
-  height: 350px; /* تحديد ارتفاع المعاينة */
-  display: flex; /* استخدام Flexbox لترتيب المحتوى */
-  align-items: center; /* توسيط العناصر عموديًا */
-  justify-content: center; /* توسيط العناصر أفقيًا */
-  border: 2px solid #ddd; /* تعيين حد رمادي */
-  border-radius: 10px; /* جعل الحواف مستديرة */
-  position: relative; /* تحديد الموضع للعناصر المطلقة داخله */
-  background: white; /* تعيين خلفية بيضاء */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف */
+  width: 300px;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  position: relative;
+  background: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* 🖋️ Custom Text */
 .custom-text {
-  position: absolute; /* جعل النص يظهر فوق المنتج */
-  color: white; /* تعيين لون النص إلى الأبيض */
-  font-weight: bold; /* جعل الخط سميكًا */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* إضافة ظل لزيادة الوضوح */
-  text-align: center; /* محاذاة النص في المنتصف */
+  position: absolute;
+  color: white;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  cursor: grab;
 }
 
 /* 🖼️ Custom Image */
 .custom-image {
-  max-width: 90%; /* تحديد الحد الأقصى لعرض الصورة */
-  max-height: 90%; /* تحديد الحد الأقصى لارتفاع الصورة */
-  position: absolute; /* جعل الصورة تظهر فوق المنتج */
+  max-width: 90%;
+  max-height: 90%;
+  position: absolute;
+  cursor: grab;
 }
 
-/* 🛒 Add to Cart Button */
+/* 🖼️ Templates */
+.templates {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.templates div {
+  cursor: pointer;
+  text-align: center;
+}
+
+.templates img {
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* 📌 تنسيق الحاوية الرئيسية للأزرار */
+.button-container {
+  display: flex;
+  justify-content: space-between; /* توزيع الأزرار بالتساوي */
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 10px 0;
+}
+
+/* 📌 جعل جميع الأزرار بنفس الحجم والتنسيق */
+.toggle-3d-btn, .add-to-cart-btn, .share-btn {
+  flex: 1; /* جعل الأزرار متساوية في العرض */
+  max-width: 200px;
+  text-align: center;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* 📌 تنسيق زر Toggle 3D View */
+.toggle-3d-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+}
+
+.toggle-3d-btn:hover {
+  background-color: #0056b3;
+}
+
+/* 📌 تنسيق زر Add to Cart */
 .add-to-cart-btn {
-  background-color: #28a745; /* لون الزر الأخضر */
-  color: white; /* لون النص */
-  border: none; /* إزالة الحدود */
-  padding: 10px 15px; /* إضافة مسافة داخلية */
-  font-size: 16px; /* تكبير حجم النص */
-  cursor: pointer; /* تغيير المؤشر عند التفاعل */
-  margin-top: 20px; /* إضافة مسافة أعلى الزر */
-  border-radius: 5px; /* جعل الحواف مستديرة */
-  transition: 0.3s; /* إضافة تأثير عند التحويل */
+  background-color: #28a745;
+  color: white;
+  border: none;
 }
 
-/* تأثير التمرير (Hover) على زر إضافة المنتج للسلة */
 .add-to-cart-btn:hover {
-  background-color: #218838; /* تغيير اللون عند تمرير الماوس */
+  background-color: #218838;
+}
+
+/* 📌 تنسيق زر Share Design */
+.share-btn {
+  background-color: #ff9800;
+  color: white;
+  border: none;
+}
+
+.share-btn:hover {
+  background-color: #e68900;
 }
