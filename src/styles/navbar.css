@@ -1,0 +1,166 @@
+/* تنسيق شريط التنقل */
+.navbar {
+  position: fixed; /* تثبيت الـ Navbar في أعلى الصفحة */
+  top: 0; /* التأكد من أنه مثبت في الأعلى */
+  left: 0;
+  width: 98%; /* جعله يمتد عبر عرض الصفحة بالكامل */
+  background-color: #ff5722; /* لون جذاب للخلفية */
+  z-index: 1000; /* التأكد من ظهوره فوق جميع العناصر الأخرى */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px; /* تحسين المسافات الداخلية */
+  border-bottom: 2px solid #e64a19; /* إضافة حد أنيق أسفل الـ Navbar */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ✅ إضافة مسافة للجسم حتى لا يغطي الـ Navbar المحتوى */
+body {
+  padding-top: 70px; /* يجب أن يكون بنفس ارتفاع الـ Navbar */
+}
+
+  /* ✅ تنسيق الشعار */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.logo a {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+/* ✅ تنسيق حقل البحث */
+.search-bar input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 250px;
+}
+
+/* ✅ تنسيق روابط القائمة */
+.menu a {
+  margin: 0 15px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.menu a:hover {
+  color: #ffeb3b;
+}
+
+/* ✅ تنسيق خيارات الحساب */
+.account-options {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* مسافة متناسقة بين الأزرار */
+}
+
+/* ✅ تنسيق الروابط داخل خيارات الحساب */
+.account-options a {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+  font-size: 14px;
+}
+
+/* ✅ تأثير Hover على خيارات الحساب */
+.account-options a:hover {
+  color: #ffeb3b;
+}
+
+/* ✅ تنسيق الأيقونات */
+.account-options a svg {
+  margin-right: 5px;
+}
+
+/* ✅ تنسيق زر Sign in */
+.signin-btn {
+  display: flex; /* جعل الأيقونة والنص في سطر واحد */
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  border: 1px solid white;
+  border-radius: 5px;
+  background: transparent;
+  color: white;
+  font-size: 14px;
+  white-space: nowrap; /* منع كسر النص إلى سطرين */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.signin-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+/* ✅ تنسيق زر Sign up */
+.signup-btn {
+  padding: 8px 15px;
+  background: #28a745;
+  color: white;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.signup-btn:hover {
+  background: #218838;
+}
+
+/* ✅ تنسيق أيقونة سلة التسوق */
+.cart-icon svg {
+  font-size: 20px;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.cart-icon svg:hover {
+  color: #ffeb3b;
+}
+
+/* تنسيق معلومات المستخدم */
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-info {
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.signout-btn {
+  background: white;
+  color: red;
+  border: 1px solid red;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: 0.3s;
+}
+
+.signout-btn:hover {
+  background: red;
+  color: white;
+}
