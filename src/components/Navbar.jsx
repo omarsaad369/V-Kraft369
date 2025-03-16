@@ -21,22 +21,34 @@ const Navbar = () => {
     navigate("/signin");
   };
 
+  const handleProtectedRoute = (path) => {
+    if (user) {
+      navigate(path); // ✅ إذا كان المستخدم مسجل، انتقل إلى الصفحة المطلوبة
+    } else {
+      navigate("/signin"); // ❌ إذا لم يكن مسجلًا، انتقل إلى صفحة تسجيل الدخول
+    }
+  };
+
   return (
     <nav className="navbar">
+      {/* ✅ الشعار */}
       <div className="logo">
-      <img src="src/assets/icons/Logo V-Kraft.png" alt="Logo" className="logo-img" />
-        <Link to="/">VKraft</Link>
+      <Link to="/"><img src="src/assets/icons/Logo_V-Kraft.png" alt="Logo" className="logo-img" /></Link>
+        <Link to="/"><img src="src/assets/icons/LogO V Kraft.png" alt="Logo" className="logo-img1" /></Link>
       </div>
 
+      {/* ✅ مربع البحث */}
       <div className="search-bar">
         <input type="text" placeholder="Search VKraft" />
       </div>
 
+      {/* ✅ القائمة */}
       <div className="menu">
-        <Link to="/sell">Sell online</Link>
-        <Link to="/order">Order for yourself</Link>
+        <button className="btn-link" onClick={() => handleProtectedRoute("/sell")}>Sell Online</button>
+        <button className="btn-link" onClick={() => handleProtectedRoute("/order")}>Order for Yourself</button>
       </div>
 
+      {/* ✅ حساب المستخدم */}
       <div className="account-options">
         {user ? (
           <div className="user-menu">
