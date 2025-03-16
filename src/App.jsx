@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop"; // استيراد المكون
 import SignUp from "./pages/SignUp"; // ✅ استيراد صفحة التسجيل
 import SignIn from "./pages/SignIn";
+import Checkout from "./pages/Checkout";
 
 function App() {
   const [searchQuery, setSearchQuery] = useState(""); // حالة البحث
@@ -24,6 +25,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/signup" element={<SignUp />} /> {/* ✅ إضافة المسار */}
           <Route path="/signin" element={<SignIn />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
         <ScrollToTop /> {/* إضافة زر العودة للأعلى */}
         <Footer />

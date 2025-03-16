@@ -1,0 +1,186 @@
+/* 🌟 تنسيق حاوية إتمام الطلب */
+.checkout-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 25px;
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    text-align: center;
+  }
+  
+  /* 🛍️ عنوان الصفحة */
+  .checkout-container h1 {
+    color: #333;
+    font-size: 26px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .checkout-container h1 img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  /* 📌 نموذج إدخال بيانات الشحن */
+  .shipping-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    text-align: left;
+    margin-top: 20px;
+  }
+  
+  .shipping-form label {
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  .shipping-form input,
+  .shipping-form select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* 🛒 تنسيق المنتجات داخل إتمام الطلب */
+  .checkout-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  /* 🎨 تصميم كل منتج */
+  .checkout-item {
+    background: #ffffff;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: 1px solid #eee;
+  }
+  
+  .product-preview {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: auto;
+    background: #f8f8f8;
+  }
+  
+  .custom-image {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
+  /* 💰 تنسيق السعر والإجمالي */
+  .checkout-summary {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #28a745;
+  }
+  
+  /* ✅ زر "تأكيد الطلب" */
+  .confirm-order-btn {
+    background: #28a745;
+    color: white;
+    font-size: 20px;
+    padding: 14px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    max-width: 400px;
+    width: 100%;
+    display: block;
+    margin: 20px auto;
+  }
+  
+  .confirm-order-btn:hover {
+    background: #218838;
+  }
+  
+  /* ✅ تحسين الاستجابة للجوال */
+  @media (max-width: 768px) {
+    .checkout-container {
+      padding: 15px;
+    }
+  
+    .shipping-form {
+      grid-template-columns: 1fr;
+    }
+  
+    .checkout-items {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .confirm-order-btn {
+      font-size: 18px;
+      padding: 12px;
+    }
+  }
+  .payment-info {
+    font-size: 14px;
+    color: #555;
+    background: #f8f8f8;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+  
+  input[name="cardNumber"], 
+  input[name="expiryDate"], 
+  input[name="cvv"] {
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 2px;
+    font-weight: bold;
+  }
+  .paypal-options {
+    margin-top: 10px;
+    padding: 10px;
+    background: #f8f8f8;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  select[name="paypalOption"] {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+    
+  .payment-info {
+    font-size: 14px;
+    color: #555;
+    background: #f8f8f8;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+  
+  input[name="cardNumber"], 
+  input[name="expiryDate"], 
+  input[name="cvv"], 
+  input[name="walletNumber"] {
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 2px;
+    font-weight: bold;
+  }
+  

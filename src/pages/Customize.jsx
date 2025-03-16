@@ -60,7 +60,6 @@ const Customize = () => {
       image: customization.image,
     };
     dispatch(addToCart(customizedProduct));
-    alert("🎉 Product added to cart!");
   };
 
   // 📌 مشاركة التصميم عبر رابط خاص

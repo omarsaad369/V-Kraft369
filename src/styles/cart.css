@@ -1,45 +1,168 @@
+/* 🌟 تنسيق الحاوية الرئيسية لسلة التسوق */
 .cart-container {
-    text-align: center;
-    padding: 20px;
+  max-width: 95%;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  text-align: center;
+}
+
+/* 🛍️ عنوان الصفحة */
+.cart-container h1 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* 📌 شبكة المنتجات - توزيع أفقي متناسق */
+.cart-items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* 🔹 يجعل المنتجات تنتشر أفقيًا */
+  gap: 20px; /* 🔹 تحسين المسافات بين المنتجات */
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* 🛒 تصميم كل منتج داخل السلة */
+.cart-item {
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #eee;
+  max-width: 200px; /* 🔹 جعل العرض متناسقًا */
+}
+
+.cart-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ✅ ضبط الصورة */
+.product-preview {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: auto;
+  background: #f8f8f8;
+}
+
+.custom-image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* 📌 تنسيق النص */
+.custom-text {
+  font-size: 14px;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  margin-top: 5px;
+}
+
+/* 💰 تنسيق السعر */
+.cart-details p {
+  margin: 8px 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* ❌ زر الحذف */
+.delete-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.delete-btn:hover {
+  background: #c82333;
+}
+
+/* 💰 إجمالي الطلب */
+.cart-total {
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #28a745;
+  text-align: center;
+}
+
+/* ✅ زر "إتمام الطلب" */
+.checkout-btn {
+  background: #28a745;
+  color: white;
+  font-size: 20px;
+  padding: 14px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  max-width: 300px; /* 🔹 جعل الزر في المنتصف */
+  display: block;
+  margin: 20px auto;
+}
+
+.checkout-btn:hover {
+  background: #218838;
+}
+
+/* ✅ تحسين الاستجابة للجوال */
+@media (max-width: 768px) {
+  .cart-items-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  .cart-item {
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin: 10px auto;
-    width: 250px;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+  .cart-container {
+    padding: 15px;
   }
-  
-  .cart-item button {
-    background-color: red;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    margin-top: 10px;
-    cursor: pointer;
-    border-radius: 3px;
+
+  .checkout-btn {
+    font-size: 18px;
+    padding: 12px;
   }
-  
-  .cart-item button:hover {
-    background-color: darkred;
-  }
-  
-  .go-to-cart-btn {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 20px;
-    border-radius: 5px;
-  }
-  
-  .go-to-cart-btn:hover {
-    background-color: #0056b3;
-  }
-  
+}
+
+/* 💰 تنسيق السعر */
+.cart-details p {
+  margin: 8px 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* ✅ زر "إتمام الطلب" بتنسيق أوسع */
+.checkout-btn {
+  background: #28a745;
+  color: white;
+  font-size: 20px;
+  padding: 16px; /* 🔹 زيادة الحجم */
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  max-width: 400px; /* 🔹 جعله أعرض */
+  width: 100%;
+  display: block;
+  margin: 20px auto;
+}
+
+.checkout-btn:hover {
+  background: #218838;
+}
