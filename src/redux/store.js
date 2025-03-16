@@ -1,20 +1,21 @@
-// استيراد configureStore من Redux Toolkit لإنشاء المتجر
+// ✅ استيراد configureStore من Redux Toolkit لإنشاء المتجر
 import { configureStore } from "@reduxjs/toolkit";
-// استيراد المخفضات (reducers) الخاصة بإدارة المنتجات، التخصيص، وسلة التسوق
+
+// ✅ استيراد المخفضات (reducers) الخاصة بالإدارة المركزية للبيانات
 import productReducer from "./slices/productSlice";
 import customizationReducer from "./slices/customizationSlice";
 import cartReducer from "./slices/cartSlice";
-import authReducer from "./slices/authSlice"; // ✅ استيراد مخزن المستخدمين
+import authReducer from "./slices/authSlice"; // ✅ إدارة المستخدمين
 
-// إنشاء المتجر باستخدام configureStore وتحديد المخفضات المستخدمة
+// ✅ إنشاء المتجر باستخدام configureStore وتحديد المخفضات المستخدمة
 const store = configureStore({
   reducer: {
-    products: productReducer,
-    customization: customizationReducer,
-    cart: cartReducer,
-    auth: authReducer, // ✅ إضافة المخزن إلى Redux
+    products: productReducer, // ✅ إدارة المنتجات
+    customization: customizationReducer, // ✅ إدارة التخصيصات
+    cart: cartReducer, // ✅ إدارة سلة التسوق
+    auth: authReducer, // ✅ إدارة بيانات المستخدم
   },
 });
 
-// تصدير المتجر حتى يمكن استخدامه في التطبيق
+// ✅ تصدير المتجر لاستخدامه في التطبيق
 export default store;

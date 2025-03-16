@@ -13,6 +13,7 @@ import SignIn from "./pages/SignIn";
 import Checkout from "./pages/Checkout";
 import SellOnline from "./pages/SellOnline";
 import OrderForYourself from "./pages/OrderForYourself";
+import UserProfile from "./pages/UserProfile";
 
 function App() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -30,6 +31,7 @@ function App() {
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/sell" element={<SellOnline />} />
           <Route path="/order" element={<OrderForYourself />} />
+          <Route path="/user-profile" element={<UserProfile />} />
         </Routes>
         <ScrollToTop />
         <Footer />
