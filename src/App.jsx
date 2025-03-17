@@ -14,6 +14,9 @@ import Checkout from "./pages/Checkout";
 import SellOnline from "./pages/SellOnline";
 import OrderForYourself from "./pages/OrderForYourself";
 import UserProfile from "./pages/UserProfile";
+import FAQ from "./pages/FAQ"; // استيراد صفحة FAQ
+import ContactUs from "./pages/ContactUs"; // استيراد صفحة Contact Us
+import AboutUs from "./pages/AboutUs"; // استيراد صفحة About Us
 
 function App() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -32,6 +35,9 @@ function App() {
           <Route path="/sell" element={<SellOnline />} />
           <Route path="/order" element={<OrderForYourself />} />
           <Route path="/user-profile" element={<UserProfile />} />
+          <Route path="/faq" element={<FAQ />} /> {/* المسار الجديد للـ FAQ */}
+          <Route path="/contact-us" element={<ContactUs />} /> {/* صفحة تواصل معنا */}
+          <Route path="/about-us" element={<AboutUs />} /> {/* صفحة عن المتجر */}
         </Routes>
         <ScrollToTop />
         <Footer />

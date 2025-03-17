@@ -1,0 +1,115 @@
+/* الحاوية الرئيسية */
+.contact-us-container {
+    width: 85%;
+    margin: 0 auto;
+    padding: 50px 0;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* رأس الصفحة */
+  .contact-us-header {
+    background-color: #007bff;
+    color: white;
+    padding: 40px 0;
+    border-radius: 8px;
+    margin-bottom: 30px;
+  }
+  
+  .contact-us-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .contact-us-header p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* معلومات الاتصال */
+  .contact-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+  
+  .contact-info-item {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-info-item p {
+    font-size: 1.1rem;
+    color: #333;
+    margin-left: 10px;
+  }
+  
+  .contact-info-item svg {
+    color: #007bff;
+  }
+  
+  /* نموذج التواصل */
+  .contact-form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-form h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .contact-form button {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .contact-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  .thank-you-message {
+    font-size: 1.2rem;
+    color: green;
+    margin-top: 20px;
+  }
+  
+  /* تحسينات للتصميم المتجاوب */
+  @media screen and (max-width: 768px) {
+    .contact-info {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  
+    .contact-info-item {
+      padding: 15px;
+    }
+  
+    .contact-form {
+      padding: 20px;
+    }
+  }
+  

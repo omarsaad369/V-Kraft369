@@ -1,0 +1,120 @@
+/* الحاوية الرئيسية */
+.about-us-container {
+    width: 85%;
+    margin: 0 auto;
+    padding: 50px 0;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  /* رأس الصفحة */
+  .about-us-header {
+    background-color: #007bff;
+    color: white;
+    padding: 50px 0;
+    border-radius: 8px;
+  }
+  
+  .about-us-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .about-us-header p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* المحتوى الأساسي */
+  .about-us-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+    margin: 40px 0;
+  }
+  
+  .about-us-text {
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  .about-us-text h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .about-us-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  /* القسم الخاص بالرسالة */
+  .about-us-mission {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    margin: 40px 0;
+  }
+  
+  .about-us-mission h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .about-us-mission p {
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  /* قيم الشركة */
+  .about-us-values {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+  }
+  
+  .about-us-values h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .value-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .value-item h3 {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-bottom: 10px;
+  }
+  
+  .value-item p {
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  /* تذييل الصفحة */
+  .about-us-footer {
+    margin-top: 40px;
+    padding: 20px 0;
+    background-color: #007bff;
+    color: white;
+    border-radius: 8px;
+  }
+  
+  .about-us-footer p {
+    font-size: 1rem;
+  }
+  

@@ -58,6 +58,9 @@ const Footer = () => {
           <p><a href="#!">Become an Affiliate</a></p>
           <p><a href="#!">Shipping Rates</a></p>
           <p><a href="#!">Help</a></p>
+          <p><a href="/faq">FAQ</a></p> {/* الرابط الجديد إلى صفحة الأسئلة الشائعة */}
+          <p><a href="/about-us">About Us</a></p>
+          <p><a href="/contact-us">Contact Us</a></p>
         </div>
 
         {/* قسم معلومات الاتصال */}
