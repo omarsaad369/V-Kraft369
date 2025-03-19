@@ -108,6 +108,21 @@ const Navbar = () => {
           </>
         )}
 
+        {/* ✅ إضافة روابط لوحة التحكم فقط إذا كان المستخدم مدير */}
+        {user && user.email === "omarsaad01007342123@gmail.com" && (
+          <div className="admin-menu">
+          <div className="admin-dropdown">
+            <button className="admin-btn">Admin</button>
+            <div className="admin-links">
+              <Link to="/admin" className="admin-link">🏠 Dashboard</Link>
+              <Link to="/admin/products" className="admin-link">📦 Manage Products</Link>
+              <Link to="/admin/orders" className="admin-link">📑 Manage Orders</Link>
+              <Link to="/admin/users" className="admin-link">👥 Manage Users</Link>
+            </div>
+          </div>
+        </div>
+        )}
+
         <li><Link to="/cart" className="cart-icon"><FaShoppingCart /></Link></li>
       </ul>
     </nav>

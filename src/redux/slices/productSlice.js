@@ -15,11 +15,20 @@ const initialState = {
 };
 
 // إنشاء Slice جديد لإدارة المنتجات باستخدام createSlice
-const productSlice = createSlice({  
-  name: "products", // تحديد اسم slice ليتم التعرف عليه داخل Redux
-  initialState, // تعيين الحالة الأولية (قائمة المنتجات)
-  reducers: {}, // حاليًا لا يوجد أي دوال (Reducers) لتعديل المنتجات، يمكن إضافتها لاحقًا
+const productSlice = createSlice({
+  name: "products",
+  initialState,
+  reducers: {
+    addProduct: (state, action) => {
+      state.products.push(action.payload);
+    },
+    deleteProduct: (state, action) => {
+      state.products = state.products.filter(
+        (product) => product.id !== action.payload
+      );
+    },
+  },
 });
 
-// تصدير المخفض (Reducer) حتى يمكن إضافته إلى Redux Store
+export const { addProduct, deleteProduct } = productSlice.actions;
 export default productSlice.reducer;
