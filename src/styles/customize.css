@@ -1,150 +1,168 @@
-/* 🌟 Main Container */
+/* styles/customize.css */
+
+/* Container الأساسي */
 .customize-container {
-  text-align: center;
-  padding: 30px;
-  font-family: "Arial", sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7fb;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* 🛠️ Customization Options */
+/* العنوان */
+h1 {
+  font-size: 2.5rem;
+  color: #2b2b2b;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+/* خيارات التخصيص */
 .customization-options {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  background: #f8f8f8;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
 }
 
-/* 🔠 Inputs & Select Fields */
+.customization-options label {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 600;
+}
+
 input[type="text"],
-input[type="file"] {
-  padding: 8px;
-  font-size: 16px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  width: 180px;
-  text-align: center;
-}
-
-/* 👀 Preview Section */
-.preview {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* 🎨 Product Preview */
-.product-preview {
-  width: 300px;
-  height: 350px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid #ddd;
-  border-radius: 10px;
-  position: relative;
-  background: white;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* 🖋️ Custom Text */
-.custom-text {
-  position: absolute;
-  color: white;
-  font-weight: bold;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  text-align: center;
-  cursor: grab;
-}
-
-/* 🖼️ Custom Image */
-.custom-image {
-  max-width: 90%;
-  max-height: 90%;
-  position: absolute;
-  cursor: grab;
-}
-
-/* 🖼️ Templates */
-.templates {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
-.templates div {
-  cursor: pointer;
-  text-align: center;
-}
-
-.templates img {
-  width: 100px;
-  height: 100px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-/* 📌 تنسيق الحاوية الرئيسية للأزرار */
-.button-container {
-  display: flex;
-  justify-content: space-between; /* توزيع الأزرار بالتساوي */
-  align-items: center;
+input[type="file"],
+select {
   width: 100%;
-  max-width: 900px;
-  margin: 20px auto;
-  padding: 10px 0;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  margin-top: 0.5rem;
 }
 
-/* 📌 جعل جميع الأزرار بنفس الحجم والتنسيق */
-.toggle-3d-btn, .add-to-cart-btn, .share-btn {
-  flex: 1; /* جعل الأزرار متساوية في العرض */
-  max-width: 200px;
-  text-align: center;
-  padding: 12px 20px;
-  font-size: 16px;
-  font-weight: bold;
+input[type="text"]:focus,
+input[type="file"]:focus,
+select:focus {
+  outline: none;
+  border-color: #6c5ce7;
+}
+
+/* تخصيص المقاسات */
+label[for="size"] {
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+select {
   cursor: pointer;
-  border-radius: 8px;
+}
+
+/* تخصيص نوع القماش */
+label[for="fabric"] {
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+/* معاينة */
+.preview {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+.product-preview {
+  position: relative;
+  width: 600px;  /* تكبير العرض */
+  height: 600px; /* تكبير الارتفاع */
+  background: #f9f9f9; /* لون خلفية أخف لتحسين العرض */
+  border: 3px dashed #aaa; /* تحسين لون الإطار */
+  border-radius: 12px;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
-  transition: all 0.3s ease-in-out;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* تحسين الظل */
+  margin: 0 auto; /* توسيط المربع داخل الصفحة */
 }
 
-/* 📌 تنسيق زر Toggle 3D View */
-.toggle-3d-btn {
-  background-color: #007bff;
+.custom-image {
+  max-width: 100%;
+  max-height: 100%;
+  transition: transform 0.2s ease;
+}
+
+.custom-text {
+  font-size: 1.5rem;
   color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* أزرار المشاركة والإضافة للسلة */
+.button-container {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+button {
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
   border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.toggle-3d-btn:hover {
-  background-color: #0056b3;
-}
-
-/* 📌 تنسيق زر Add to Cart */
 .add-to-cart-btn {
-  background-color: #28a745;
+  background-color: #6c5ce7;
   color: white;
-  border: none;
+  margin-right: 1rem;
 }
 
 .add-to-cart-btn:hover {
-  background-color: #218838;
+  background-color: #5a4bb2;
 }
 
-/* 📌 تنسيق زر Share Design */
 .share-btn {
-  background-color: #ff9800;
+  background-color: #00b894;
   color: white;
-  border: none;
 }
 
 .share-btn:hover {
-  background-color: #e68900;
+  background-color: #019c6e;
+}
+
+/* تخصيص شكل التخصيص عندما يكون محملاً */
+input[type="file"]:disabled {
+  background-color: #f0f0f0;
+  cursor: not-allowed;
+}
+
+/* تأثيرات hover للنصوص والصور القابلة للتحريك */
+.custom-text:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+.custom-image:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
+}
+
+/* تخصيص الخانات الخاصة بالمقاس المخصص */
+.custom-size-container {
+  margin-top: 1rem;
+}
+
+.custom-size-container input {
+  margin-top: 0.5rem;
 }

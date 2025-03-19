@@ -1,66 +1,71 @@
-// استيراد المكتبات المطلوبة
-import React, { useEffect, useState, useRef, forwardRef } from "react";
+import React, { useState, useCallback, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setColor, setText, setImage } from "../redux/slices/customizationSlice";
+import { setColor, setText, setImage, setSize, setFabric } from "../redux/slices/customizationSlice";
 import { addToCart } from "../redux/slices/cartSlice";
 import { SketchPicker } from "react-color";
 import Draggable from "react-draggable";
 import "../styles/customize.css";
-import Product3D from "../components/Product3D";
-
-// 📌 مكون النص القابل للتحريك باستخدام forwardRef
-const DraggableText = forwardRef(({ text }, ref) => (
-  <Draggable nodeRef={ref}>
-    <p ref={ref} className="custom-text">{text}</p>
-  </Draggable>
-));
 
 const Customize = () => {
   const dispatch = useDispatch();
   const customization = useSelector((state) => state.customization);
-  const [templates, setTemplates] = useState([]);
-  const [show3DPreview, setShow3DPreview] = useState(false);
   const textRef = useRef(null);
   const imageRef = useRef(null);
-
-  // 📌 تحميل القوالب الجاهزة من JSON
-  useEffect(() => {
-    fetch("/templates.json")
-      .then((res) => res.json())
-      .then((data) => setTemplates(data))
-      .catch((err) => console.error("❌ Error loading templates:", err));
-  }, []);
+  const [customSize, setCustomSize] = useState("");
+  const [shouldSuggestSize, setShouldSuggestSize] = useState(false);
 
   // 📌 تغيير اللون
-  const handleColorChange = (color) => {
+  const handleColorChange = useCallback((color) => {
     dispatch(setColor(color.hex));
-  };
+  }, [dispatch]);
 
   // 📌 تحديث النص
-  const handleTextChange = (e) => {
+  const handleTextChange = useCallback((e) => {
     dispatch(setText(e.target.value));
-  };
+  }, [dispatch]);
 
   // 📌 تحميل صورة مخصصة
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
-    if (file) {
+    if (file && file.size <= 5000000) { // فحص حجم الصورة (5MB)
       const reader = new FileReader();
       reader.onloadend = () => dispatch(setImage(reader.result));
       reader.readAsDataURL(file);
+    } else {
+      alert("❌ Image size exceeds 5MB");
     }
   };
 
+  // 📌 تحديث المقاس
+  const handleSizeChange = (e) => {
+    const selectedSize = e.target.value;
+    dispatch(setSize(selectedSize));
+
+    // 📌 إذا كان المستخدم يختار "مقاس مخصص"، نعرض مربع الإدخال
+    if (selectedSize === "custom") {
+      setShouldSuggestSize(true);
+    } else {
+      setShouldSuggestSize(false);
+    }
+  };
+
+  // 📌 تحديث نوع القماش
+  const handleFabricChange = (e) => {
+    dispatch(setFabric(e.target.value));
+  };
+
   // 📌 إضافة المنتج إلى السلة
-  const handleAddToCart = () => {
+  const handleAddToCart = useCallback(() => {
     const customizedProduct = {
       id: Date.now(),
       color: customization.color,
       text: customization.text,
       image: customization.image,
+      size: customization.size,
+      fabric: customization.fabric,
     };
     dispatch(addToCart(customizedProduct));
-  };
+  }, [dispatch, customization]);
 
   // 📌 مشاركة التصميم عبر رابط خاص
   const shareDesign = () => {
@@ -68,6 +73,8 @@ const Customize = () => {
       color: customization.color,
       text: customization.text,
       image: customization.image,
+      size: customization.size,
+      fabric: customization.fabric,
     });
 
     const shareUrl = `${window.location.origin}/customize?${params.toString()}`;
@@ -79,19 +86,55 @@ const Customize = () => {
     <div className="customize-container">
       <h1>🎨 Customize Your Product</h1>
 
-      {/* 📌 خيارات التخصيص */}
+      {/* خيارات التخصيص */}
       <div className="customization-options">
         <label>🎨 Choose Product Color:</label>
         <SketchPicker color={customization.color} onChange={handleColorChange} />
 
         <label>✍️ Add Custom Text:</label>
-        <input type="text" value={customization.text} onChange={handleTextChange} placeholder="Enter text here" />
+        <input
+          type="text"
+          value={customization.text}
+          onChange={handleTextChange}
+          placeholder="Enter text here"
+        />
 
         <label>📷 Upload Custom Image:</label>
         <input type="file" accept="image/*" onChange={handleImageUpload} />
+        
+        {/* اختيار المقاس */}
+        <label>📏 Select Size:</label>
+        <select onChange={handleSizeChange} value={customization.size}>
+          <option value="XS">XS</option>
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+          <option value="custom">Custom Size</option>
+        </select>
+        
+        {shouldSuggestSize && (
+          <div>
+            <label>🧍 Enter Your Custom Size:</label>
+            <input
+              type="text"
+              placeholder="Enter custom size here"
+              value={customSize}
+              onChange={(e) => setCustomSize(e.target.value)}
+            />
+          </div>
+        )}
+
+        {/* اختيار نوع القماش */}
+        <label>🧵 Select Fabric Type:</label>
+        <select onChange={handleFabricChange} value={customization.fabric}>
+          <option value="cotton">Cotton</option>
+          <option value="polyester">Polyester</option>
+          <option value="silk">Silk</option>
+        </select>
       </div>
 
-      {/* 📌 عرض المعاينة */}
+      {/* عرض المعاينة */}
       <div className="preview">
         <h2>👀 Preview</h2>
         <div className="product-preview" style={{ backgroundColor: customization.color }}>
@@ -107,27 +150,8 @@ const Customize = () => {
         </div>
       </div>
 
-      {/* 📌 اختيار القوالب الجاهزة */}
-      <div className="templates">
-        <h2>🖼️ Choose a Template</h2>
-        <div className="template-grid">
-          {templates.map((template) => (
-            <div key={template.id} className="template-item" onClick={() => dispatch(setImage(template.image))}>
-              <img src={template.image} alt={template.name} />
-              <p>{template.name}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* 📌 معاينة ثلاثية الأبعاد */}
-      {show3DPreview && <Product3D />}
-
-      {/* 📌 الأزرار الرئيسية */}
+      {/* الأزرار الرئيسية */}
       <div className="button-container">
-        <button className="toggle-3d-btn" onClick={() => setShow3DPreview((prev) => !prev)}>
-          🔄 Toggle 3D View
-        </button>
         <button className="add-to-cart-btn" onClick={handleAddToCart}>
           🛒 Add to Cart
         </button>
