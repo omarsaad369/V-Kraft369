@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../styles/admin.css"; // استيراد التنسيقات
+import "../../styles/AdminDashboard.css"; // استيراد التنسيقات
 import { FaChartLine, FaBoxes, FaUsers, FaCog } from "react-icons/fa"; // أيقونات إضافية
 
 const AdminDashboard = () => {
   return (
-    <div className="admin-container">
+    <div className="admin-dashboard-container"> {/* تغيير اسم className */}
       {/* Sidebar */}
-      <aside className="admin-sidebar">
+      <aside className="admin-dashboard-sidebar"> {/* تغيير اسم className */}
         <h2>Admin Panel</h2>
         <ul>
           <li><Link to="/admin/products"><FaBoxes /> Manage Products</Link></li>
@@ -19,28 +19,28 @@ const AdminDashboard = () => {
       </aside>
 
       {/* Main Content */}
-      <main className="admin-main">
+      <main className="admin-dashboard-main"> {/* تغيير اسم className */}
         <h1>Welcome to Admin Dashboard</h1>
 
         {/* Stats Boxes */}
-        <div className="admin-stats">
-          <div className="stat-box">
+        <div className="admin-dashboard-stats"> {/* تغيير اسم className */}
+          <div className="admin-dashboard-stat-box"> {/* تغيير اسم className */}
             <h3>🛒 Orders</h3>
             <strong>120</strong>
           </div>
-          <div className="stat-box">
+          <div className="admin-dashboard-stat-box"> {/* تغيير اسم className */}
             <h3>👥 Users</h3>
             <strong>300</strong>
           </div>
-          <div className="stat-box">
+          <div className="admin-dashboard-stat-box"> {/* تغيير اسم className */}
             <h3>💰 Revenue</h3>
             <strong>$5,000</strong>
           </div>
         </div>
 
         {/* Sections */}
-        <section className="admin-sections">
-          <div className="section-box">
+        <section className="admin-dashboard-sections"> {/* تغيير اسم className */}
+          <div className="admin-dashboard-section-box"> {/* تغيير اسم className */}
             <h3>Quick Links</h3>
             <ul>
               <li><Link to="/admin/products">📦 Manage Products</Link></li>
@@ -50,7 +50,7 @@ const AdminDashboard = () => {
             </ul>
           </div>
 
-          <div className="section-box">
+          <div className="admin-dashboard-section-box"> {/* تغيير اسم className */}
             <h3>Recent Activity</h3>
             <ul>
               <li><strong>Order #120</strong> was placed on <span>10/10/2025</span></li>
@@ -61,7 +61,7 @@ const AdminDashboard = () => {
         </section>
 
         {/* Footer */}
-        <footer className="admin-footer">
+        <footer className="admin-dashboard-footer"> {/* تغيير اسم className */}
           <p>© 2025 VKraft Admin Dashboard. All rights reserved.</p>
         </footer>
       </main>

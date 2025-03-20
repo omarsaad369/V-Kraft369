@@ -120,6 +120,7 @@ const Navbar = () => {
               <Link to="/admin/products" className="admin-link">📦 Manage Products</Link>
               <Link to="/admin/orders" className="admin-link">📑 Manage Orders</Link>
               <Link to="/admin/users" className="admin-link">👥 Manage Users</Link>
+              <Link to="/admin/settings" className="admin-link">⚙️ Settings</Link>
             </div>
           </div>
         </div>

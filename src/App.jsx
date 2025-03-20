@@ -21,6 +21,7 @@ import AdminDashboard from "./pages/admin/AdminDashboard";
 import ManageProducts from "./pages/admin/ManageProducts";
 import ManageOrders from "./pages/admin/ManageOrders";
 import ManageUsers from "./pages/admin/ManageUsers";
+import AdminSettings from "./pages/admin/AdminSettings"; // استيراد الصفحة الجديدة
 
 function App() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -46,6 +47,7 @@ function App() {
           <Route path="/admin/products" element={<ManageProducts />} />
           <Route path="/admin/orders" element={<ManageOrders />} />
           <Route path="/admin/users" element={<ManageUsers />} />
+          <Route path="/admin/settings" element={<AdminSettings />} />
         </Routes>
         <ScrollToTop />
         <Footer />
