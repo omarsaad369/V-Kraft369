@@ -16,7 +16,7 @@
 
 /* ✅ إضافة مسافة للجسم حتى لا يغطي الـ Navbar المحتوى */
 body {
-  padding-top: 70px; 
+  padding-top: 100px; 
 }
 
 /* ✅ تحسين الشعار */
@@ -58,36 +58,46 @@ body {
   position: relative;
   display: flex;
   align-items: center;
-  background: white;
-  border-radius: 30px;
-  border: 2px solid #ff6600;
-  padding: 5px 10px;
-  width: 200px;
-  transition: all 0.3s ease-in-out;
+  background: #f0f0f0;
+  border-radius: 50px;
+  border: 1px solid #ddd;
+  padding: 5px 12px;
+  width: 160px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  transition: width 0.4s ease, box-shadow 0.4s ease;
+}
+
+.search-container:hover {
+  width: 170px; /* توسيع مربع البحث عند التحويم */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* إضافة ظل */
 }
 
 .search-input {
   border: none;
   outline: none;
   flex: 1;
-  padding: 8px;
+  padding: 10px;
   font-size: 16px;
-  color: black;
+  color: #333;
   background: transparent;
+  border-radius: 20px;
 }
 
 .search-btn {
-  background: transparent;
+  background: #ff6600;
   border: none;
   cursor: pointer;
   font-size: 18px;
-  color: #ff6600;
-  transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 50%;
+  margin-left: 8px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .search-btn:hover {
-  transform: scale(1.1);
-  color: #ff4500;
+  transform: scale(1.2);
+  background-color: #ff4500;
 }
 
 /* ✅ تصميم قائمة نتائج البحث */
@@ -96,33 +106,41 @@ body {
   top: 100%;
   left: 0;
   width: 100%;
-  background: white;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
   max-height: 200px;
   overflow-y: auto;
   display: none;
+  margin-top: 5px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.search-results.show {
+  display: block;
+  opacity: 1;
 }
 
 .search-results li {
-  padding: 10px;
+  padding: 12px;
   display: flex;
   align-items: center;
   cursor: pointer;
-  transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease;
 }
 
 .search-results li:hover {
-  background: #ff6600;
+  background-color: #ff6600;
   color: white;
 }
 
 .search-results img {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   margin-right: 10px;
-  border-radius: 5px;
+  border-radius: 50%;
 }
+
 
 
 /* 📌 قائمة الخيارات */
@@ -231,7 +249,7 @@ body {
 .user-menu {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
 }
 
 .user-info {

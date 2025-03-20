@@ -72,19 +72,21 @@ const Navbar = () => {
       </div>
 
       {/* ✅ مربع البحث */}
-      <div className="search-container">
-        <input
-          type="text"
-          className="search-input"
-          placeholder="Search VKraft..."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          onKeyDown={(e) => e.key === "Enter" && handleSearch()}
-        />
-        <button className="search-btn" onClick={handleSearch}>
-          <FaSearch />
-        </button>
-      </div>
+{/* ✅ مربع البحث */}
+<div className="search-container">
+  <input
+    type="text"
+    className="search-input"
+    placeholder="ابحث هنا..."
+    value={searchQuery}
+    onChange={(e) => setSearchQuery(e.target.value)}
+    onKeyDown={(e) => e.key === "Enter" && handleSearch()}
+  />
+  <button className="search-btn" onClick={handleSearch}>
+    <FaSearch />
+  </button>
+</div>
+
 
       {/* ✅ القائمة */}
       <ul ref={menuRef} className={`nav-menu ${menuOpen ? "open" : ""}`}>
